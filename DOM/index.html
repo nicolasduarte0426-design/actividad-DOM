@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabor de Casa - Recetario Dinámico</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <h1> Sabor de Casa </h1>
+            <nav>
+                <ul>
+                    <li><a href="#destacadas">Destacadas</a></li>
+                    <li><a href="#recetas">Recetas</a></li>
+                    <li><a href="#agregar-receta">Añadir</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        
+        <section id="destacadas" aria-labelledby="destacadas-heading">
+            <h2 id="destacadas-heading">Recetas de la Semana</h2>
+            <div id="featured-list" class="recipe-grid">
+                </div>
+        </section>
+
+        <hr>
+        
+        <section id="agregar-receta" aria-labelledby="form-heading">
+            <h2 id="form-heading">Comparte tu Receta</h2>
+            <form id="recipe-form" novalidate>
+                <div class="form-group">
+                    <label for="nombre-receta">Nombre de la Receta:</label>
+                    <input type="text" id="nombre-receta" required aria-required="true" data-min-length="3">
+                    <span class="error-msg" aria-live="polite"></span>
+                </div>
+                <div class="form-group">
+                    <label for="ingredientes">Ingredientes (separados por coma):</label>
+                    <textarea id="ingredientes" required aria-required="true"></textarea>
+                    <span class="error-msg" aria-live="polite"></span>
+                </div>
+                <div class="form-group">
+                    <label for="imagen-url">URL de la Imagen:</label>
+                    <input type="url" id="imagen-url" value aria-describedby="url-hint">
+                    <small id="url-hint" class="hint">Usaremos un placeholder si está vacío.</small>
+                </div>
+                <button type="submit" id="submit-btn" class="btn-primary">Guardar Receta</button>
+            </form>
+            <p id="form-feedback" aria-live="assertive" role="status"></p>
+        </section>
+
+        <hr>
+
+        <section id="recetas" aria-labelledby="list-heading">
+            <h2 id="list-heading">Todas las Recetas</h2>
+            <div id="recetas-list" class="recipe-grid">
+                </div>
+        </section>
+        
+        <hr>
+        
+        <section id="nosotros" aria-labelledby="nosotros-heading">
+            <h2 id="nosotros-heading"> Nuestra Misión</h2>
+            <p>Compartir recetas que salen del corazon y prepararlas con amor</p>
+            <div class="about-info">
+                <img src="chef.jpg" width="150" height="150">
+                <p>¡Únete a nuestra familia y comparte tu especialidad culinaria!</p>
+            </div>
+        </section>
+
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
